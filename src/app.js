@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+
 const morgan = require('morgan');
 app.use(morgan('dev'));
 app.use(express.json());
@@ -9,6 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const router = require('./layers/routers');
 app.use('/api', router);
+
 
 // const { sequelize } = require('./models');
 // sequelize
