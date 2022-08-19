@@ -37,8 +37,8 @@ module.exports = (sequelize, DataTypes) => {
             onUpdate: 'cascade',
         });
         User.hasMany(models.Room, {
-            foreignKey: 'userId',
-            sourceKey: 'ownerUserId',
+            foreignKey: 'ownerUserId',
+            sourceKey: 'userId',
             onDelete: 'cascade',
             onUpdate: 'cascade',
         });
