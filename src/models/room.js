@@ -34,8 +34,8 @@ module.exports = (sequelize, DataTypes) => {
             onUpdate: 'cascade',
         });
         Room.belongsTo(models.User, {
-            foreignKey: 'userId',
-            targetKey: 'ownerUserId',
+            foreignKey: 'ownerUserId',
+            targetKey: 'userId',
             onDelete: 'cascade',
             onUpdate: 'cascade',
         });

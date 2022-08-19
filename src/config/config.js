@@ -2,6 +2,7 @@ require('dotenv/config');
 const env = process.env;
 
 const development = {
+    logging: false,
     username: env.DB_USERNAME,
     password: env.DB_PASSWORD,
     database: env.DB_DATABASE,
@@ -11,7 +12,7 @@ const development = {
 
 const test = {
     username: env.DB_USERNAME,
-    password: null,
+    password: env.DB_PASSWORD,
     database: env.DB_DATABASE,
     host: env.DB_HOST,
     dialect: env.DB_DIALECT,
