@@ -10,7 +10,7 @@ class RoomRepository {
             const room = await Room.create({ roomName, category, ownerUserId });
             return room;
         } catch (err) {
-            // console.log(err);
+            console.log(err);
             throw err;
         }
     };

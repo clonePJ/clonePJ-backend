@@ -37,7 +37,6 @@ class RoomController {
 
     getRoom = async (req, res, next) => {
         const category = req.query.category;
-        console.log('쿼리스트링 테스트2', category);
         try {
             if (category === '') {
                 const getAllRoom = await this.roomService.getRoom();
