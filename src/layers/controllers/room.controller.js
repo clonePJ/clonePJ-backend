@@ -15,7 +15,6 @@ class RoomController {
         const ownerUserId = 1;
         const { roomName, category } = req.body;
         console.log({ roomName, category });
-        // joi 추가
         try {
             await joi
                 .object({
@@ -26,7 +25,7 @@ class RoomController {
                 .validateAsync({ ownerUserId, roomName, category });
 
             const result = await this.roomService.postRoom(roomName, category, ownerUserId);
-            return res.status(200).json({ status: 200, success: true, result: reuslt });
+            return res.status(201).json({ status: 200, success: true, result: result });
         } catch (err) {
             console.log(err);
             return res
@@ -38,22 +37,27 @@ class RoomController {
 
     getRoom = async (req, res, next) => {
         const category = req.query.category;
-        console.log('쿼리스트링 테스트2', category);
         try {
-            const getAllRoom = await this.roomService.getRoom(category);
-            return res.status(200).json({ status: 200, success: true, result: getAllRoom });
+            if (category === '') {
+                const getAllRoom = await this.roomService.getRoom();
+                return res.status(200).json({ status: 200, success: true, result: getAllRoom });
+            } else {
+                const getCategoryRoom = await this.roomService.getCategoryRoom(category);
+                return res
+                    .status(200)
+                    .json({ status: 200, success: true, result: getCategoryRoom });
+            }
         } catch (err) {
             console.log(err);
             throw err;
         }
-
-        res.send('getRoom도착!');
-        return console.log('happy');
     };
 
     deleteRoom = async (req, res, next) => {
-        res.send('deleteRoom도착!');
-        return console.log('happy');
+        const roomId = req.params.roomId;
+        console.log(roomId);
+        const result = await this.roomService.deleteRoom(roomId);
+        return res.status(200).json({ status: 200, success: true, result: {} });
     };
 }
 
