@@ -1,4 +1,4 @@
-const { Chat } = require('../../models');
+const { Chat } = require('../../../models');
 
 module.exports = class ChatRepository {
     createChat = async (roomId, userId, content) => {
