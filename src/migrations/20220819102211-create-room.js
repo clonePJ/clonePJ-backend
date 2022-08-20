@@ -9,8 +9,13 @@ module.exports = {
                 type: Sequelize.INTEGER,
             },
             ownerUserId: {
+                foreignKey: true,
                 allowNull: false,
                 type: Sequelize.INTEGER,
+            },
+            roomName: {
+                allowNull: false,
+                type: Sequelize.STRING,
             },
             category: {
                 type: Sequelize.STRING,
