@@ -18,12 +18,38 @@ class RoomRepository {
     getRoom = async () => {
         try {
             const allRoom = await Room.findAll({
-                order: [['updatedAt', 'DESC']],
                 attributes: ['roomId', 'roomName', 'category'],
+                order: [['updatedAt', 'DESC']],
             });
 
             return allRoom;
         } catch (err) {
+            throw err;
+        }
+    };
+
+    getCategoryRoom = async (category) => {
+        try {
+            const getCategoryRoom = await Room.findAll({
+                where: { category },
+                order: [['updatedAt', 'DESC']],
+                attributes: ['roomId', 'roomName', 'category'],
+            });
+            return getCategoryRoom;
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
+    };
+
+    deleteRoom = async (roomId) => {
+        try {
+            const deleteRoom = await Room.destroy({
+                where: { roomId },
+            });
+            return deleteRoom;
+        } catch (err) {
+            console.log(err);
             throw err;
         }
     };

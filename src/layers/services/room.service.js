@@ -14,9 +14,13 @@ class RoomService {
     getRoom = async (req, res, next) => {
         return await this.roomRepository.getRoom();
     };
-    deleteRoom = async (req, res, next) => {
-        res.send('deleteRoom도착!');
-        return console.log('happy');
+
+    getCategoryRoom = async (category) => {
+        return await this.roomRepository.getCategoryRoom(category);
+    };
+
+    deleteRoom = async (roomId) => {
+        return await this.roomRepository.deleteRoom(roomId);
     };
 }
 module.exports = RoomService;
