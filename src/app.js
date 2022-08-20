@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const sequelize = require('sequelize');
+// const sequelize = require('sequelize');
 
 const morgan = require('morgan');
 app.use(morgan('dev'));
@@ -18,7 +18,7 @@ const { sequelize } = require('./models');
 sequelize
     .sync({ force: false })
     .then(() => {
-        console.log('db connect seccess');
+        console.log('db connect success');
     })
     .catch((err) => {
         console.error(err);

@@ -7,13 +7,12 @@ class RoomService {
         this.roomRepository = new RoomRepository();
     }
 
-    postRoom = async (ownerUserId, roomName, category) => {
-        return await this.roomRepository.postRoom(ownerUserId, roomName, category);
+    postRoom = async (roomName, category, ownerUserId) => {
+        return await this.roomRepository.postRoom(roomName, category, ownerUserId);
     };
 
     getRoom = async (req, res, next) => {
-        res.send('getRoom도착!');
-        return console.log('happy');
+        return await this.roomRepository.getRoom();
     };
     deleteRoom = async (req, res, next) => {
         res.send('deleteRoom도착!');
