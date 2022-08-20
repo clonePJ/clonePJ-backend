@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     Chat.init(
         {
             chatId: {
+                unique: true,
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 autoIncrement: true,
@@ -27,16 +28,16 @@ module.exports = (sequelize, DataTypes) => {
     );
     Chat.associate = function (models) {
         Chat.belongsTo(models.User, {
-            foreignKey: 'userId',
+            foreignKey: 'ownerUserId',
             targetKey: 'userId',
-            onDelete: 'cascade',
-            onUpdate: 'cascade',
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
         });
         Chat.belongsTo(models.Room, {
             foreignKey: 'roomId',
             targetKey: 'roomId',
-            onDelete: 'cascade',
-            onUpdate: 'cascade',
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
         });
     };
     return Chat;
