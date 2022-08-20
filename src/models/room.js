@@ -17,7 +17,9 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
                 type: DataTypes.INTEGER,
                 autoIncrement: true,
+                unique: true,
             },
+            roomName: DataTypes.STRING,
             category: DataTypes.STRING,
             lastChat: DataTypes.STRING,
         },
@@ -30,14 +32,14 @@ module.exports = (sequelize, DataTypes) => {
         Room.hasMany(models.Chat, {
             foreignKey: 'roomId',
             sourceKey: 'roomId',
-            onDelete: 'cascade',
-            onUpdate: 'cascade',
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
         });
         Room.belongsTo(models.User, {
             foreignKey: 'ownerUserId',
             targetKey: 'userId',
-            onDelete: 'cascade',
-            onUpdate: 'cascade',
+            onDelete: 'CASCADE',
+            onUpdate: 'CASCADE',
         });
     };
     return Room;
