@@ -1,4 +1,3 @@
-const bcrypt = require("bcrypt");
 const UserService = require("../services/user.service");
 
 class UserController {
@@ -15,9 +14,9 @@ class UserController {
     }
   }
   signup = async (req, res, next) => {
-    const { email, nickname, password } = req.body;
+    const { email, nickname, password, birth } = req.body;
     try {
-      await this.userService.signup(email, nickname, password);
+      await this.userService.signup(email, nickname, password, birth);
       res.status(201).json({ result: true });
     } catch (err) {
       res.status(400).json({ result: false });
