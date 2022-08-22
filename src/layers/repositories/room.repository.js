@@ -1,13 +1,13 @@
-const { Room, User } = require('../../models');
+const { Room } = require('../../models');
 
 console.log('모델 불러와!');
 
 class RoomRepository {
     constructor() {}
 
-    postRoom = async (roomName, category, ownerUserId) => {
+    postRoom = async (ownerUserId, roomName, content, category) => {
         try {
-            const room = await Room.create({ roomName, category, ownerUserId });
+            const room = await Room.create({ ownerUserId, roomName, content, category });
             return room;
         } catch (err) {
             console.log(err);
@@ -18,7 +18,7 @@ class RoomRepository {
     getRoom = async () => {
         try {
             const allRoom = await Room.findAll({
-                attributes: ['roomId', 'roomName', 'category'],
+                attributes: ['roomId', 'roomName', 'category', 'content'],
                 order: [['updatedAt', 'DESC']],
             });
 
@@ -43,7 +43,7 @@ class RoomRepository {
             const getCategoryRoom = await Room.findAll({
                 where: { category },
                 order: [['updatedAt', 'DESC']],
-                attributes: ['roomId', 'roomName', 'category'],
+                attributes: ['roomId', 'roomName', 'category', 'content'],
             });
             return getCategoryRoom;
         } catch (err) {
