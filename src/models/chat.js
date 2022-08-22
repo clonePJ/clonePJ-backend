@@ -28,16 +28,14 @@ module.exports = (sequelize, DataTypes) => {
     );
     Chat.associate = function (models) {
         Chat.belongsTo(models.User, {
-            foreignKey: 'ownerUserId',
+            foreignKey: { name: 'userId', allowNull: false },
             targetKey: 'userId',
             onDelete: 'CASCADE',
-            onUpdate: 'CASCADE',
         });
         Chat.belongsTo(models.Room, {
-            foreignKey: 'roomId',
+            foreignKey: { name: 'roomId', allowNull: false },
             targetKey: 'roomId',
             onDelete: 'CASCADE',
-            onUpdate: 'CASCADE',
         });
     };
     return Chat;

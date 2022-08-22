@@ -32,15 +32,13 @@ module.exports = (sequelize, DataTypes) => {
     );
     User.associate = function (models) {
         User.hasMany(models.Chat, {
-            foreignKey: 'userId',
+            foreignKey: { name: 'userId', allowNull: false },
             sourceKey: 'userId',
-            onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
         });
         User.hasMany(models.Room, {
-            foreignKey: 'ownerUserId',
+            foreignKey: { name: 'ownerUserId', allowNull: false },
             sourceKey: 'userId',
-            onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
         });
     };

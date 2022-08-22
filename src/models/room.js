@@ -30,16 +30,14 @@ module.exports = (sequelize, DataTypes) => {
     );
     Room.associate = function (models) {
         Room.hasMany(models.Chat, {
-            foreignKey: 'roomId',
+            foreignKey: { name: 'roomId', allowNull: false },
             sourceKey: 'roomId',
-            onDelete: 'CASCADE',
             onUpdate: 'CASCADE',
         });
         Room.belongsTo(models.User, {
-            foreignKey: 'ownerUserId',
+            foreignKey: { name: 'ownerUserId', allowNull: false },
             targetKey: 'userId',
             onDelete: 'CASCADE',
-            onUpdate: 'CASCADE',
         });
     };
     return Room;
