@@ -1,7 +1,7 @@
 require('dotenv/config');
 const env = process.env;
 
-const { User, Room, Chat } = require('../../models');
+const { User, Room, Chat } = require('../models');
 const jwt = require('jsonwebtoken');
 
 module.exports = class test {

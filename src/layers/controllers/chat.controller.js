@@ -1,4 +1,3 @@
-const { response } = require('express');
 const ChatService = require('../services/chat.service');
 
 module.exports = class ChatController {
@@ -18,11 +17,28 @@ module.exports = class ChatController {
 
     createNewChat = async (req, res) => {
         const { roomId } = req.params;
-        // const { userId } = res.locals;
-        const userId = 1;
+        const { userId } = res.locals;
         const { content } = req.body;
 
-        const response = await this.chatService.createChat(roomId, userId, content);
+        try {
+            await joi
+                .object({
+                    roomId: joi.number().required(),
+                    userId: joi.number().required(),
+                    content: joi.string().required(),
+                })
+                .validateAsync({ roomId, userId, content });
+            const response = await this.chatService.createChat(roomId, userId, content);
+
+            const result = await this.roomService.postRoom(roomName, category, ownerUserId);
+            return res.status(201).json({ status: 200, success: true, result: result });
+        } catch (err) {
+            console.log(err);
+            return res
+                .status(400)
+                .json({ status: 400, success: false, message: '입력한 형식이 맞지 않습니다.' });
+        }
+
         console.log(response);
         const r = response;
         console.log(r);
