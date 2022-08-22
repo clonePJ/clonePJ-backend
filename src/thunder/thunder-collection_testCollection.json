@@ -1,0 +1,631 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "testCollection",
+    "dateExported": "2022-08-20T04:13:31.791Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "c866bb8b-38e5-4d2e-98c2-6b71d98b3924",
+            "name": "EC2",
+            "containerId": "",
+            "created": "2022-08-17T07:06:59.765Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "e0a9a37d-b259-4da3-9fe2-5e302b6019b2",
+            "name": "User",
+            "containerId": "c866bb8b-38e5-4d2e-98c2-6b71d98b3924",
+            "created": "2022-08-17T07:07:09.699Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "2a3fe3ab-cea9-4566-97af-92c652925a76",
+            "name": "Local",
+            "containerId": "",
+            "created": "2022-08-19T18:32:24.505Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "06a82913-2bf7-42e7-b829-720885bcc4e9",
+            "name": "User",
+            "containerId": "2a3fe3ab-cea9-4566-97af-92c652925a76",
+            "created": "2022-08-19T18:32:24.506Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "f0f27d20-1973-4fde-ab68-affa4da68c51",
+            "name": "Room",
+            "containerId": "c866bb8b-38e5-4d2e-98c2-6b71d98b3924",
+            "created": "2022-08-17T07:07:17.349Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "486b880b-319a-4dca-98d6-3e342d19bf18",
+            "name": "Room",
+            "containerId": "2a3fe3ab-cea9-4566-97af-92c652925a76",
+            "created": "2022-08-19T18:32:24.508Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "ae5c535d-5f74-4050-ab51-58ce25110e39",
+            "name": "Chat",
+            "containerId": "c866bb8b-38e5-4d2e-98c2-6b71d98b3924",
+            "created": "2022-08-17T07:07:24.252Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "5fe97cf5-75d6-4ab4-9171-788cc36d550d",
+            "name": "Chat",
+            "containerId": "2a3fe3ab-cea9-4566-97af-92c652925a76",
+            "created": "2022-08-19T18:32:24.509Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "Test",
+            "containerId": "2a3fe3ab-cea9-4566-97af-92c652925a76",
+            "created": "2022-08-20T01:57:51.483Z",
+            "sortNum": 100000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "5ccbc727-5a7e-4cc8-9b65-9cb552884d10",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "ae5c535d-5f74-4050-ab51-58ce25110e39",
+            "name": "newChat",
+            "url": "http://43.200.163.13/api/chat/1",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2022-08-19T18:28:46.867Z",
+            "modified": "2022-08-19T18:30:14.596Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"채팅 내용입니다.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2af88208-cc74-4849-b8b8-f621b0853f84",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "5fe97cf5-75d6-4ab4-9171-788cc36d550d",
+            "name": "newChat",
+            "url": "http://localhost:3000/api/chat/1",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2022-08-19T18:32:24.513Z",
+            "modified": "2022-08-19T18:33:50.361Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"채팅 내용입니다.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4dbc8d5f-09ae-4606-b079-1f76b1e6bd27",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "ae5c535d-5f74-4050-ab51-58ce25110e39",
+            "name": "editChat",
+            "url": "http://43.200.163.13/api/chat/159487",
+            "method": "PUT",
+            "sortNum": 17500,
+            "created": "2022-08-19T18:30:21.035Z",
+            "modified": "2022-08-19T18:31:03.699Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"수정 된 채팅 내용입니다.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9ea99f13-3222-4f3e-aec0-9e5153c2d914",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "5fe97cf5-75d6-4ab4-9171-788cc36d550d",
+            "name": "editChat",
+            "url": "http://localhost:3000/api/chat/159487",
+            "method": "PUT",
+            "sortNum": 17500,
+            "created": "2022-08-19T18:32:24.515Z",
+            "modified": "2022-08-19T18:33:53.884Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"content\": \"수정 된 채팅 내용입니다.\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2461ecc5-55e6-4cf8-a2ac-969f1da2d2b8",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "ae5c535d-5f74-4050-ab51-58ce25110e39",
+            "name": "deleteRoom",
+            "url": "http://43.200.163.13/api/chat/159487",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2022-08-19T18:27:51.715Z",
+            "modified": "2022-08-19T18:30:49.709Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9f784592-d722-4af8-af32-d671486dcfaf",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "5fe97cf5-75d6-4ab4-9171-788cc36d550d",
+            "name": "deleteRoom",
+            "url": "http://localhost:3000/api/chat/159487",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2022-08-19T18:32:24.516Z",
+            "modified": "2022-08-19T18:33:57.581Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c5f59b9a-83ed-47c9-91cd-bcfff147c0ec",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "ae5c535d-5f74-4050-ab51-58ce25110e39",
+            "name": "enterRoom",
+            "url": "http://43.200.163.13/api/chat/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2022-08-19T17:52:52.124Z",
+            "modified": "2022-08-19T18:31:55.214Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a8ff4894-477a-464b-acc7-79f94e6a5726",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "5fe97cf5-75d6-4ab4-9171-788cc36d550d",
+            "name": "enterRoom",
+            "url": "http://localhost:3000/api/chat/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2022-08-19T18:32:24.517Z",
+            "modified": "2022-08-19T18:34:00.914Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "56c6403e-e63c-41cc-aea3-a291a5159eb3",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "e0a9a37d-b259-4da3-9fe2-5e302b6019b2",
+            "name": "signup",
+            "url": "http://43.200.163.13/api/user/signup",
+            "method": "POST",
+            "sortNum": 105000,
+            "created": "2022-08-19T17:49:00.039Z",
+            "modified": "2022-08-19T18:08:59.175Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"email\": \"test@test.com\",\n\"nickname\": \"닉네임\",\n\"password\": \"qwer1@\",\n\"birth\": \"2000.01.01\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "009c103e-f4e1-43d8-aec1-aa6fcc44c46d",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "06a82913-2bf7-42e7-b829-720885bcc4e9",
+            "name": "signup",
+            "url": "http://localhost:3000/api/user/signup",
+            "method": "POST",
+            "sortNum": 105000,
+            "created": "2022-08-19T18:32:24.505Z",
+            "modified": "2022-08-19T18:33:23.789Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n\"email\": \"test@test.com\",\n\"nickname\": \"닉네임\",\n\"password\": \"qwer1@\",\n\"birth\": \"2000.01.01\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "441a58ea-46dc-429a-a5ab-a447e4980828",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "e0a9a37d-b259-4da3-9fe2-5e302b6019b2",
+            "name": "login",
+            "url": "http://43.200.163.13/api/user/login",
+            "method": "POST",
+            "sortNum": 210000,
+            "created": "2022-08-17T07:35:57.665Z",
+            "modified": "2022-08-19T17:51:47.393Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"test@test.com\",\n  \"password\": \"qwer1@\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "257d2c54-a30a-4297-8b89-c9a41eb1ed8d",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "06a82913-2bf7-42e7-b829-720885bcc4e9",
+            "name": "login",
+            "url": "http://localhost:3000/api/user/login",
+            "method": "POST",
+            "sortNum": 210000,
+            "created": "2022-08-19T18:32:24.506Z",
+            "modified": "2022-08-19T18:33:28.540Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"test@test.com\",\n  \"password\": \"qwer1@\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "7233e22f-51eb-4d1d-bb2b-8cbc411331be",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "e0a9a37d-b259-4da3-9fe2-5e302b6019b2",
+            "name": "quit",
+            "url": "http://43.200.163.13/api/user/quit",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2022-08-19T17:51:38.113Z",
+            "modified": "2022-08-19T18:08:48.238Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": { "type": "json", "raw": "{\n  \"password\": \"qwer1@\"\n}", "form": [] },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fcba63b2-262e-478d-a76a-4eeb2cc3a479",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "06a82913-2bf7-42e7-b829-720885bcc4e9",
+            "name": "quit",
+            "url": "http://localhost:3000/api/user/quit",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2022-08-19T18:32:24.508Z",
+            "modified": "2022-08-19T18:33:32.002Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": { "type": "json", "raw": "{\n  \"password\": \"qwer1@\"\n}", "form": [] },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c9367b40-be76-42d6-9b6f-1b6fa38b9b1e",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "userCreate",
+            "url": "http://localhost:3000/test/user",
+            "method": "POST",
+            "sortNum": 230000,
+            "created": "2022-08-20T01:58:09.767Z",
+            "modified": "2022-08-20T02:12:32.666Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"test@test.com\",\n  \"nickname\": \"테스트용\",\n  \"password\": \"test123\",\n  \"birth\": \"2000.01.01\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "785a9d11-2af7-423f-bb43-264b64a68616",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "roomCreate",
+            "url": "http://localhost:3000/test/room",
+            "method": "POST",
+            "sortNum": 235000,
+            "created": "2022-08-20T02:11:00.528Z",
+            "modified": "2022-08-20T02:18:55.922Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"ownerUserId\": 2,\n  \"category\": 1,\n  \"lastChat\": \"임시\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "5451412c-5e6e-44c5-b142-e8ccc64a6b4e",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "chatCreate",
+            "url": "http://localhost:3000/test/chat",
+            "method": "POST",
+            "sortNum": 237500,
+            "created": "2022-08-20T02:11:03.310Z",
+            "modified": "2022-08-20T02:13:08.754Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userId\": 1,\n  \"roomId\": 1,\n  \"content\": \"채팅 내용 1\"\n}",
+                "form": []
+            },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "635fd085-f722-42c5-ac19-58f6911dbaac",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "f0f27d20-1973-4fde-ab68-affa4da68c51",
+            "name": "category X (All) Copy",
+            "url": "http://43.200.163.13/api/room?category",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2022-08-19T18:25:39.943Z",
+            "modified": "2022-08-19T18:25:39.943Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [{ "name": "category", "value": "", "isPath": false }],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "17f73f7a-87b3-40aa-9767-be36a8a06b67",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "486b880b-319a-4dca-98d6-3e342d19bf18",
+            "name": "category X (All) Copy",
+            "url": "http://localhost:3000/api/room?category",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2022-08-19T18:32:24.509Z",
+            "modified": "2022-08-19T18:33:36.132Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [{ "name": "category", "value": "", "isPath": false }],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d83b0c74-61a5-441d-a50c-a483ee2b7833",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "userDelete",
+            "url": "http://localhost:3000/test/user",
+            "method": "DELETE",
+            "sortNum": 240000,
+            "created": "2022-08-20T02:10:33.685Z",
+            "modified": "2022-08-20T02:27:35.086Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": { "type": "json", "raw": "{\n  \"userId\": 2\n}", "form": [] },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "d6d32f04-1fd2-4530-80e4-1722d7972d37",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "getAll",
+            "url": "http://localhost:3000/test",
+            "method": "GET",
+            "sortNum": 240000,
+            "created": "2022-08-20T02:17:57.223Z",
+            "modified": "2022-08-20T02:18:13.922Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "56ae2e9d-dae0-4863-9c21-082fc029af2b",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "roomDelete",
+            "url": "http://localhost:3000/test/room",
+            "method": "DELETE",
+            "sortNum": 245000,
+            "created": "2022-08-20T02:11:06.727Z",
+            "modified": "2022-08-20T02:13:38.448Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": { "type": "json", "raw": "{\n  \"roomId\": 1\n}", "form": [] },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "71e2df34-a445-4819-9703-559446a72b76",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "f0f27d20-1973-4fde-ab68-affa4da68c51",
+            "name": "category = 1",
+            "url": "http://43.200.163.13/api/room?category=1",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2022-08-19T18:11:56.205Z",
+            "modified": "2022-08-19T18:11:56.205Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [{ "name": "category", "value": "1", "isPath": false }],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "afd5289f-35ae-4a84-a964-7ab5c377e328",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "486b880b-319a-4dca-98d6-3e342d19bf18",
+            "name": "category = 1",
+            "url": "http://localhost:3000/api/room?category=1",
+            "method": "GET",
+            "sortNum": 250000,
+            "created": "2022-08-19T18:32:24.510Z",
+            "modified": "2022-08-19T18:33:39.375Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [{ "name": "category", "value": "1", "isPath": false }],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e41e5d39-dfd0-42b9-9588-42dba5c060ed",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "30c7ec93-93ae-4f02-afcf-96e3172bca17",
+            "name": "chatDelete",
+            "url": "http://localhost:3000/test/chat",
+            "method": "DELETE",
+            "sortNum": 250000,
+            "created": "2022-08-20T02:10:57.142Z",
+            "modified": "2022-08-20T02:13:47.877Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": { "type": "json", "raw": "{\n  \"chatId\": 1\n}", "form": [] },
+            "auth": { "type": "oauth2" },
+            "tests": []
+        },
+        {
+            "_id": "5c5c78c0-6b53-41fe-97a5-a15f3b46b80d",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "f0f27d20-1973-4fde-ab68-affa4da68c51",
+            "name": "createRoom",
+            "url": "http://43.200.163.13/api/room",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2022-08-19T18:10:57.020Z",
+            "modified": "2022-08-19T18:23:30.082Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"roomName\": \"방 이름입니다\",\n  \"category\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1c0cfa3d-2df2-4d68-b167-92675b980873",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "486b880b-319a-4dca-98d6-3e342d19bf18",
+            "name": "createRoom",
+            "url": "http://localhost:3000/api/room",
+            "method": "POST",
+            "sortNum": 260000,
+            "created": "2022-08-19T18:32:24.511Z",
+            "modified": "2022-08-19T18:33:43.104Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"roomName\": \"방 이름입니다\",\n  \"category\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "224219d1-3701-44f9-84fc-a92a8679bf16",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "f0f27d20-1973-4fde-ab68-affa4da68c51",
+            "name": "deleteRoom",
+            "url": "http://43.200.163.13/api/room/159487",
+            "method": "DELETE",
+            "sortNum": 270000,
+            "created": "2022-08-19T18:23:44.229Z",
+            "modified": "2022-08-19T18:25:27.297Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a6f78cc-ddc5-4a10-bf58-838cee27a826",
+            "colId": "f10406e7-8364-4531-9a6a-cabf415dbadd",
+            "containerId": "486b880b-319a-4dca-98d6-3e342d19bf18",
+            "name": "deleteRoom",
+            "url": "http://localhost:3000/api/room/159487",
+            "method": "DELETE",
+            "sortNum": 270000,
+            "created": "2022-08-19T18:32:24.512Z",
+            "modified": "2022-08-19T18:33:46.834Z",
+            "headers": [{ "name": "Origin", "value": "0" }],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY2MDkzMjM3MSwiZXhwIjoxNjYxNTM3MTcxfQ.NF9zOODLnvLq0AdOsC_7s3FbbnUHx5wF1eQz3I4nAxg"
+            },
+            "tests": []
+        }
+    ]
+}

@@ -1,4 +1,8 @@
+require('dotenv/config');
+const env = process.env;
+
 const { User, Room, Chat } = require('../models');
+const jwt = require('jsonwebtoken');
 
 module.exports = class test {
     getAll = async (req, res) => {
@@ -39,5 +43,14 @@ module.exports = class test {
         const { chatId } = req.body;
         const success = await Chat.destroy({ where: { chatId } });
         res.status(200).json({ success });
+    };
+
+    login = async (req, res) => {
+        const { userId } = req.body;
+        const token = jwt.sign({ userId }, env.TOKEN_SECRET, {
+            algorithm: env.TOKEN_OPTION_ALGORITHM,
+            expiresIn: env.TOKEN_OPTION_EXPIRESIN,
+        });
+        res.status(200).json({ token, meg: '2시간' });
     };
 };
