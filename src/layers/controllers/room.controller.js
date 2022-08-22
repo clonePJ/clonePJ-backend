@@ -13,18 +13,23 @@ class RoomController {
 
     postRoom = async (req, res, next) => {
         const ownerUserId = 1;
-        const { roomName, category } = req.body;
-        console.log({ roomName, category });
+        const { roomName, content, category } = req.body;
         try {
             await joi
                 .object({
                     ownerUserId: joi.number().required(),
                     roomName: joi.string().required(),
+                    content: joi.string(),
                     category: joi.string(),
                 })
-                .validateAsync({ ownerUserId, roomName, category });
+                .validateAsync({ ownerUserId, roomName, content, category });
 
-            const result = await this.roomService.postRoom(roomName, category, ownerUserId);
+            const result = await this.roomService.postRoom(
+                ownerUserId,
+                roomName,
+                content,
+                category,
+            );
             return res.status(201).json({ status: 200, success: true, result: result });
         } catch (err) {
             console.log(err);
