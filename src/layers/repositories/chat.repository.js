@@ -2,8 +2,13 @@ const { Chat } = require('../../models');
 
 module.exports = class ChatRepository {
     createChat = async (roomId, userId, content) => {
-        const chat = await Chat.create({ roomId, userId, content });
-        return chat;
+        try {
+            const success = await Chat.create({ roomId, userId, content });
+            return success;
+        } catch (err) {
+            console.log(err);
+            return;
+        }
     };
 
     findAllChat = async (roomId) => {

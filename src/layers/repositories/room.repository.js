@@ -28,6 +28,16 @@ class RoomRepository {
         }
     };
 
+    getOneRoom = async (roomId) => {
+        try {
+            const room = await Room.findByPk(roomId);
+            return room;
+        } catch (err) {
+            console.log(err);
+            return;
+        }
+    };
+
     getCategoryRoom = async (category) => {
         try {
             const getCategoryRoom = await Room.findAll({
@@ -39,6 +49,16 @@ class RoomRepository {
         } catch (err) {
             console.log(err);
             throw err;
+        }
+    };
+
+    updateLastChat = async (roomId, lastChat) => {
+        try {
+            const updateInfo = await Room.update({ lastChat }, { where: roomId });
+            return updateInfo;
+        } catch (err) {
+            console.log(err);
+            return;
         }
     };
 

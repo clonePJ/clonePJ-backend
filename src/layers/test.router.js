@@ -8,6 +8,6 @@ router.route('/user').post(test.createUser).delete(test.deleteUser);
 router.route('/room').post(test.createRoom).delete(test.deleteRoom);
 router.route('/chat').post(test.createChat).delete(test.deleteChat);
 
-router.get('/', test.getAll);
+router.route('/').get(test.getAll).post(test.login);
 
 module.exports = router;
