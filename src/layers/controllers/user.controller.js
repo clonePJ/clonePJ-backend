@@ -35,9 +35,9 @@ class UserController {
 
   //회원탈퇴
   quit = async (req, res, next) => {
-    const { email, password } = req.body;
+    const { userId, password } = req.body;
     try {
-      await this.userService.quit(email, password);
+      await this.userService.quit(userId, password);
       return res.status(200).json({ result: true })
     } catch (err) {
       return res.status(400).json({ result: false });
