@@ -1,5 +1,11 @@
-const { Router } = require('express');
-const userRouter = Router();
-module.exports = userRouter;
+const express = require('express');
+const router = express.Router();
 
-//const user= '안녕'
+const UserController = require('../controllers/user.controller');
+const userController = new UserController();
+//const signMiddleware = require('../middlewares/sign.middleware')
+
+//router.use(signMiddleware);
+router.post('/dup/email', userController.checkEmailDup)
+
+module.exports = router;
