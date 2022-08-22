@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 
 //Class Service
-class Userservice {
+class UserService {
   userRepository = new UserRepository();
 }
 
@@ -58,8 +58,15 @@ signin = async (email, password) => {
     } else throw Error(false);
   } else throw Error(false);
 };
+//회원탈퇴
+quit = async (email, password) => {
+  if (!email || !password) throw error(false);
+  throw Error('정보가 일치하지 않습니다.')
 
-
-module.exports = Userservice;
+  await this.userRepository.quit(email, password);
 
 }
+
+
+module.exports = UserService;
+

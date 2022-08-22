@@ -12,7 +12,12 @@ class UserRepository {
   checkUserDup = async (email) => {
     const data = await Users.findOne({ where: { email }, raw: true });
     return data;
+
   }
+  quitUser = async (email, password) => {
+    await Users.destroy({ where: { password } });
+  }
+
 
 }
 module.exports = UserRepository;
