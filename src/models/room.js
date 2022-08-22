@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
                 unique: true,
             },
             roomName: DataTypes.STRING,
+            content: DataTypes.STRING,
             category: DataTypes.STRING,
             lastChat: DataTypes.STRING,
         },
