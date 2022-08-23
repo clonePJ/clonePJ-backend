@@ -30,7 +30,7 @@ class RoomRepository {
 
     getOneRoom = async (roomId) => {
         try {
-            const room = await Room.findByPk(roomId);
+            const room = await Room.findOne({ where: { roomId } });
             return room;
         } catch (err) {
             console.log(err);
