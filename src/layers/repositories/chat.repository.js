@@ -1,4 +1,4 @@
-const { Chat } = require('../../models');
+const { Chat, User } = require('../../models');
 
 module.exports = class ChatRepository {
     createChat = async (roomId, userId, content) => {
@@ -31,12 +31,12 @@ module.exports = class ChatRepository {
     };
 
     updateChat = async (chatId, content) => {
-        const success = await Chat.update({ content }, { where: chatId });
-        return console.log(success);
+        const success = await Chat.update({ content }, { where: { chatId } });
+        return success;
     };
 
     deleteChat = async (chatId) => {
         const success = await Chat.destroy({ where: { chatId } });
-        return console.log(success);
+        return success;
     };
 };
