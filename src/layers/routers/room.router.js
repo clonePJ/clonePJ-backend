@@ -1,4 +1,4 @@
-const { Router, application } = require('express');
+const { Router } = require('express');
 const roomRouter = Router();
 
 const RoomController = require('../controllers/room.controller');

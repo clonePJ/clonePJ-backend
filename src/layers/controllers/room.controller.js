@@ -1,6 +1,4 @@
-const { RoboMaker } = require('aws-sdk');
 const express = require('express');
-const { number } = require('joi');
 const joi = require('joi');
 
 const RoomService = require('../services/room.service');
