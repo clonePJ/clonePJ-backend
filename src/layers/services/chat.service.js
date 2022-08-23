@@ -16,10 +16,10 @@ module.exports = class ChatService {
         if (!content) return this.errResponse(400, '내용이 비어 있습니다.');
 
         const createResult = await this.chatRepository.createChat(roomId, userId, content);
-        if (!createResult) return this.errResponse(401, '잘못된 접근');
+        if (createResult) return this.errResponse(401, '잘못된 접근');
 
         const updateRoomResult = await this.roomRepository.updateLastChat(roomId, content);
-        if (updateRoomResult === 0) return this.errResponse(401, '잘못된 접근');
+        if (updateRoomResult == [0]) return this.errResponse(401, '잘못된 접근');
 
         return { status: 201, success: true };
     };
@@ -30,11 +30,11 @@ module.exports = class ChatService {
         const roomData = {
             ownerUserId: roomInfo.ownerUserId,
             owner: userId === roomInfo.ownerUserId,
+            roomName: roomInfo.roomName,
         };
 
         const chatList = await this.chatRepository.findAllChat(roomId);
-        if (chatList == [])
-            return { status: 200, success: true.valueOf, data: { roomData, chatData: [] } };
+        if (chatList == []) return { status: 200, success: true, data: { roomData, chatData: [] } };
         const chatData = await chatList.map((c) => {
             return {
                 chatId: c.chatId,

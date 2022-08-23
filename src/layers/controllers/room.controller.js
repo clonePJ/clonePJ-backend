@@ -39,10 +39,14 @@ class RoomController {
 
     getRoom = async (req, res, next) => {
         const { category } = req.query;
+        console.log(req.query);
+        console.log(category);
         if (category === '') {
+            console.log('공백 확인');
             const getAllRoom = await this.roomService.getRoom();
             return res.status(200).json({ status: 200, success: true, result: getAllRoom });
         } else {
+            console.log('흐음');
             const getCategoryRoom = await this.roomService.getCategoryRoom(category);
             return res.status(200).json({ status: 200, success: true, result: getCategoryRoom });
         }
