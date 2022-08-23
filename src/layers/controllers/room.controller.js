@@ -13,8 +13,7 @@ class RoomController {
     }
 
     postRoom = async (req, res, next) => {
-        // const ownerUserId = res.locals.userId;
-        const ownerUserId = 1;
+        const ownerUserId = res.locals.userId;
         const { roomName, content, category } = req.body;
         try {
             await joi
@@ -61,8 +60,7 @@ class RoomController {
     };
 
     deleteRoom = async (req, res) => {
-        // const ownerUserId = res.locals.userId;
-        const ownerUserId = 2;
+        const ownerUserId = res.locals.userId;
         const { roomId } = req.params;
 
         const result = await this.roomService.deleteRoom(roomId, ownerUserId);
@@ -70,7 +68,6 @@ class RoomController {
         else {
             return res.status(400).json({ result: result });
         }
-
     };
 }
 
