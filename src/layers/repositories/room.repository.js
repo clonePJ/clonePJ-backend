@@ -1,7 +1,5 @@
 const { Room } = require('../../models');
 
-console.log('모델 불러와!');
-
 class RoomRepository {
     constructor() {}
 
@@ -62,16 +60,11 @@ class RoomRepository {
         }
     };
 
-    deleteRoom = async (roomId) => {
-        try {
-            const deleteRoom = await Room.destroy({
-                where: { roomId },
-            });
-            return deleteRoom;
-        } catch (err) {
-            console.log(err);
-            throw err;
-        }
+    deleteRoom = async (roomId, ownerUserId) => {
+        const deleteRoom = await Room.destroy({
+            where: { roomId },
+        });
+        return deleteRoom;
     };
 }
 
