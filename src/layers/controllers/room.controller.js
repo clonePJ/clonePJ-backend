@@ -70,6 +70,7 @@ class RoomController {
         else {
             return res.status(400).json({ result: result });
         }
+
     };
 }
 
