@@ -9,10 +9,12 @@ module.exports = {
                 type: Sequelize.INTEGER,
             },
             userId: {
+                foreignKey: true,
                 allowNull: false,
                 type: Sequelize.INTEGER,
             },
             roomId: {
+                foreignKey: true,
                 allowNull: false,
                 type: Sequelize.INTEGER,
             },

@@ -18,7 +18,7 @@ class RoomRepository {
     };
 
     getOneRoom = async (roomId) => {
-        const room = await Room.findByPk(roomId);
+        const room = await Room.findOne({ where: { roomId } });
         return room;
     };
 
@@ -32,7 +32,7 @@ class RoomRepository {
     };
 
     updateLastChat = async (roomId, lastChat) => {
-        const updateInfo = await Room.update({ lastChat }, { where: roomId });
+        const updateInfo = await Room.update({ lastChat }, { where: { roomId } });
         return updateInfo;
     };
 

@@ -14,18 +14,6 @@ module.exports = class ChatController {
         const { userId } = res.locals;
         const { content } = req.body;
 
-        try {
-            await joi
-                .object({
-                    roomId: joi.number().required(),
-                    userId: joi.number().required(),
-                    content: joi.string().required(),
-                })
-                .validateAsync({ roomId, userId, content });
-        } catch (err) {
-            return this.sendResponse(res, 400, false, '입력한 형식이 맞지 않습니다.');
-        }
-
         const response = await this.chatService.createChat(roomId, userId, content);
         const r = response;
         return this.sendResponse(res, r.status, r.success, r.success ? null : r.message);
@@ -34,17 +22,6 @@ module.exports = class ChatController {
     findRoomChatList = async (req, res) => {
         const { roomId } = req.params;
         const { userId } = res.locals;
-
-        try {
-            await joi
-                .object({
-                    roomId: joi.number().required(),
-                    userId: joi.number().required(),
-                })
-                .validateAsync({ roomId, userId });
-        } catch (err) {
-            return this.sendResponse(res, 400, false, '입력한 형식이 맞지 않습니다.');
-        }
 
         const response = await this.chatService.findRoomChat(roomId, userId);
         const r = response;
@@ -56,18 +33,6 @@ module.exports = class ChatController {
         const { userId } = res.locals;
         const { content } = req.body;
 
-        try {
-            await joi
-                .object({
-                    chatId: joi.number().required(),
-                    userId: joi.number().required(),
-                    content: joi.string().required(),
-                })
-                .validateAsync({ chatId, userId, content });
-        } catch (err) {
-            return this.sendResponse(res, 400, false, '입력한 형식이 맞지 않습니다.');
-        }
-
         const response = await this.chatService.updateChat(chatId, userId, content);
         const r = response;
         return this.sendResponse(res, r.status, r.success, r.success ? null : r.message);
@@ -76,17 +41,6 @@ module.exports = class ChatController {
     deleteChat = async (req, res) => {
         const { chatId } = req.params;
         const { userId } = res.locals;
-
-        try {
-            await joi
-                .object({
-                    chatId: joi.number().required(),
-                    userId: joi.number().required(),
-                })
-                .validateAsync({ roomId, userId });
-        } catch (err) {
-            return this.sendResponse(res, 400, false, '입력한 형식이 맞지 않습니다.');
-        }
 
         const response = await this.chatService.deleteChat(chatId, userId);
         const r = response;

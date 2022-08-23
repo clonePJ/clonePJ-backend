@@ -24,8 +24,8 @@ module.exports = class test {
     };
 
     createRoom = async (req, res) => {
-        const { ownerUserId, category, lastChat } = req.body;
-        const room = await Room.create({ ownerUserId, category, lastChat });
+        const { ownerUserId, roomName, content, category, lastChat } = req.body;
+        const room = await Room.create({ ownerUserId, roomName, content, category, lastChat });
         res.status(201).json({ room });
     };
     deleteRoom = async (req, res) => {
