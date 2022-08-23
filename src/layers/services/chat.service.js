@@ -33,15 +33,18 @@ module.exports = class ChatService {
         };
 
         const chatList = await this.chatRepository.findAllChat(roomId);
-        const chatData = chatList.map((c) => {
+        if (chatList == [])
+            return { status: 200, success: true.valueOf, data: { roomData, chatData: [] } };
+        const chatData = await chatList.map((c) => {
             return {
                 chatId: c.chatId,
-                nickname: c.User.nickname,
+                nickname: c['User.nickname'],
                 chatOwner: userId == c.userId,
                 content: c.content,
                 updatedAt: c.updatedAt,
             };
         });
+        console.log(chatList);
 
         return {
             status: 200,
@@ -59,7 +62,7 @@ module.exports = class ChatService {
         if (chatInfo.content === content) return this.errResponse(400, '변경된 내용이 없습니다.');
 
         const updateResult = await this.chatRepository.updateChat(chatId, content);
-        if (!updateResult) return this.errResponse(401, '알 수 없는 에러');
+        if (updateResult == [0]) return this.errResponse(401, '알 수 없는 에러');
 
         return {
             status: 201,
@@ -73,7 +76,7 @@ module.exports = class ChatService {
         if (chatInfo.userId !== userId) return this.errResponse(401, '작성자가 아닙니다.');
 
         const deleteResult = await this.chatRepository.deleteChat(chatId);
-        if (!deleteResult) return this.errResponse(401, '알 수 없는 에러');
+        if (deleteResult == 0) return this.errResponse(401, '알 수 없는 에러');
 
         return {
             status: 200,

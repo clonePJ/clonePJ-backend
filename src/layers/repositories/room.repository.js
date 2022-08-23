@@ -52,7 +52,7 @@ class RoomRepository {
 
     updateLastChat = async (roomId, lastChat) => {
         try {
-            const updateInfo = await Room.update({ lastChat }, { where: roomId });
+            const updateInfo = await Room.update({ lastChat }, { where: { roomId } });
             return updateInfo;
         } catch (err) {
             console.log(err);
