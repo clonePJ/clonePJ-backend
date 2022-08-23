@@ -1,5 +1,6 @@
 const { RoboMaker } = require('aws-sdk');
 const express = require('express');
+const { number } = require('joi');
 const joi = require('joi');
 
 const RoomService = require('../services/room.service');
@@ -41,7 +42,7 @@ class RoomController {
     };
 
     getRoom = async (req, res, next) => {
-        const category = req.query.category;
+        const { category } = req.query;
         try {
             if (category === '') {
                 const getAllRoom = await this.roomService.getRoom();
@@ -58,9 +59,8 @@ class RoomController {
         }
     };
 
-    deleteRoom = async (req, res, next) => {
-        const roomId = req.params.roomId;
-        console.log(roomId);
+    deleteRoom = async (req, res) => {
+        const { roomId } = req.params;
         const result = await this.roomService.deleteRoom(roomId);
         return res.status(200).json({ status: 200, success: true, result: {} });
     };
