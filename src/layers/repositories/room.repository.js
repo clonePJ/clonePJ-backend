@@ -36,7 +36,7 @@ class RoomRepository {
         return updateInfo;
     };
 
-    deleteRoom = async (roomId, ownerUserId) => {
+    deleteRoom = async (roomId) => {
         const deleteRoom = await Room.destroy({
             where: { roomId },
         });
