@@ -13,6 +13,7 @@ class RoomController {
     }
 
     postRoom = async (req, res, next) => {
+        // const ownerUserId = res.locals.userId;
         const ownerUserId = 1;
         const { roomName, content, category } = req.body;
         try {
@@ -60,8 +61,14 @@ class RoomController {
     };
 
     deleteRoom = async (req, res) => {
+        // const ownerUserId = res.locals.userId;
+        const ownerUserId = 1;
         const { roomId } = req.params;
-        const result = await this.roomService.deleteRoom(roomId);
+
+        const result = await this.roomService.deleteRoom(roomId, ownerUserId);
+        console.log('result = ', result);
+        if (result === 0) return res.status(400).json({ status: 400, success: false, result });
+
         return res.status(200).json({ status: 200, success: true, result: {} });
     };
 }

@@ -60,11 +60,11 @@ class RoomRepository {
         }
     };
 
-    deleteRoom = async (roomId) => {
+    deleteRoom = async (roomId, ownerUserId) => {
         const deleteRoom = await Room.destroy({
             where: { roomId },
         });
-        if (deleteRoom !== 0) return deleteRoom;
+        return deleteRoom;
     };
 }
 
