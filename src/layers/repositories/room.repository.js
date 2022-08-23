@@ -40,7 +40,6 @@ class RoomRepository {
         const deleteRoom = await Room.destroy({
             where: { roomId },
         });
-        console.log('deleteRoom', deleteRoom);
         return deleteRoom;
     };
 }
