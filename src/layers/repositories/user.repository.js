@@ -1,5 +1,8 @@
 const { User } = require('../../models')
 class UserRepository {
+
+
+
   checkEmailDup = async (email) => {
     return await User.findOne({ where: { email } });
   }
@@ -16,7 +19,7 @@ class UserRepository {
 
   }
   quitUser = async (userId) => {
-    await Users.destroy({ where: { userId } });
+    await User.destroy({ where: { userId } });
   }
 
 
