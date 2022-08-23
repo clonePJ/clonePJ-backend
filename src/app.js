@@ -1,10 +1,26 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-// const sequelize = require('sequelize');
 
 const morgan = require('morgan');
 app.use(morgan('dev'));
+
+const cors = require('cors');
+const whitelist = ['0', 'http://localhost:3000'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whitelist.indexOf(origin) !== -1) {
+            console.log('허가:', origin);
+            callback(null, true);
+        } else {
+            console.log('불허가', origin);
+            callback(new Error('Not Allowed Origin!'));
+        }
+    },
+};
+app.use(cors(corsOptions));
+// const sequelize = require('sequelize');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
