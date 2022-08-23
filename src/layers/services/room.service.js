@@ -20,7 +20,10 @@ class RoomService {
     };
 
     getCategoryRoom = async (category) => {
-        return await this.roomRepository.getCategoryRoom(category);
+        const getCategoryRoom = await this.roomRepository.getCategoryRoom(category);
+        if (!getCategoryRoom) return this.errResponse(401, '알 수 없는 에러');
+
+        return { status: 200, success: true, result: getCategoryRoom };
     };
 
     deleteRoom = async (roomId, ownerUserId) => {

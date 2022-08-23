@@ -4,60 +4,36 @@ class RoomRepository {
     constructor() {}
 
     postRoom = async (ownerUserId, roomName, content, category) => {
-        try {
-            const room = await Room.create({ ownerUserId, roomName, content, category });
-            return room;
-        } catch (err) {
-            console.log(err);
-            throw err;
-        }
+        const room = await Room.create({ ownerUserId, roomName, content, category });
+        return room;
     };
 
     getRoom = async () => {
-        try {
-            const allRoom = await Room.findAll({
-                attributes: ['roomId', 'roomName', 'category', 'content'],
-                order: [['updatedAt', 'DESC']],
-            });
+        const allRoom = await Room.findAll({
+            attributes: ['roomId', 'roomName', 'category', 'content'],
+            order: [['updatedAt', 'DESC']],
+        });
 
-            return allRoom;
-        } catch (err) {
-            throw err;
-        }
+        return allRoom;
     };
 
     getOneRoom = async (roomId) => {
-        try {
-            const room = await Room.findOne({ where: { roomId } });
-            return room;
-        } catch (err) {
-            console.log(err);
-            return;
-        }
+        const room = await Room.findOne({ where: { roomId } });
+        return room;
     };
 
     getCategoryRoom = async (category) => {
-        try {
-            const getCategoryRoom = await Room.findAll({
-                where: { category },
-                order: [['updatedAt', 'DESC']],
-                attributes: ['roomId', 'roomName', 'category', 'content'],
-            });
-            return getCategoryRoom;
-        } catch (err) {
-            console.log(err);
-            throw err;
-        }
+        const getCategoryRoom = await Room.findAll({
+            where: { category },
+            order: [['updatedAt', 'DESC']],
+            attributes: ['roomId', 'roomName', 'category', 'content'],
+        });
+        return getCategoryRoom;
     };
 
     updateLastChat = async (roomId, lastChat) => {
-        try {
-            const updateInfo = await Room.update({ lastChat }, { where: { roomId } });
-            return updateInfo;
-        } catch (err) {
-            console.log(err);
-            return;
-        }
+        const updateInfo = await Room.update({ lastChat }, { where: { roomId } });
+        return updateInfo;
     };
 
     deleteRoom = async (roomId, ownerUserId) => {
