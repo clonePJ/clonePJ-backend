@@ -3,6 +3,8 @@ require('dotenv').config();
 const SECRET_KEY = process.env.SECRET_KEY;
 module.exports = (req, res, next) => {
     const { authorization } = req.headers;
+    console.log(req.headers);
+    console.log(authorization);
     if (!authorization)
         return res.status(400).json({ result: false, message: '로그인하지 않았습니다.' });
 

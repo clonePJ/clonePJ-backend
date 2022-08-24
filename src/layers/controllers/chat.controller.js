@@ -10,7 +10,9 @@ module.exports = class ChatController {
     };
 
     createNewChat = async (req, res) => {
-        const { roomId } = req.params;
+        const strRoomId = req.params.roomId;
+        const roomId = +strRoomId;
+        console.log(roomId);
         const { userId } = res.locals;
         const { content } = req.body;
 
@@ -20,7 +22,8 @@ module.exports = class ChatController {
     };
 
     findRoomChatList = async (req, res) => {
-        const { roomId } = req.params;
+        const strRoomId = req.params.roomId;
+        const roomId = +strRoomId;
         const { userId } = res.locals;
 
         const response = await this.chatService.findRoomChat(roomId, userId);
@@ -29,7 +32,8 @@ module.exports = class ChatController {
     };
 
     updateChat = async (req, res) => {
-        const { chatId } = req.params;
+        const strChatId = req.params.chatId;
+        const chatId = +strChatId;
         const { userId } = res.locals;
         const { content } = req.body;
 
@@ -39,7 +43,8 @@ module.exports = class ChatController {
     };
 
     deleteChat = async (req, res) => {
-        const { chatId } = req.params;
+        const strChatId = req.params.chatId;
+        const chatId = +strChatId;
         const { userId } = res.locals;
 
         const response = await this.chatService.deleteChat(chatId, userId);
