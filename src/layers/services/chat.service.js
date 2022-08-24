@@ -1,3 +1,4 @@
+const room = require('../../models/room');
 const user = require('../../models/user');
 const ChatRepository = require('../repositories/chat.repository');
 const RoomRepository = require('../repositories/room.repository');
@@ -16,7 +17,7 @@ module.exports = class ChatService {
         if (!content) return this.errResponse(400, '내용이 비어 있습니다.');
 
         const createResult = await this.chatRepository.createChat(roomId, userId, content);
-        if (createResult) return this.errResponse(401, '잘못된 접근');
+        if (!createResult) return this.errResponse(401, '잘못된 접근');
 
         const updateRoomResult = await this.roomRepository.updateLastChat(roomId, content);
         if (updateRoomResult == [0]) return this.errResponse(401, '잘못된 접근');
@@ -44,7 +45,6 @@ module.exports = class ChatService {
                 updatedAt: c.updatedAt,
             };
         });
-        console.log(chatList);
 
         return {
             status: 200,

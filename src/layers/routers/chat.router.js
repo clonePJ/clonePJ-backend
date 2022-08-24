@@ -10,12 +10,12 @@ const auth = require('../middlewares/auth.middleware');
 
 chatRouter
     .route('/:roomId')
-    .get(auth, chatController.findRoomChatList)
-    .post(auth, chatController.createNewChat);
+    .get(auth, chatController.findRoomChatList) // roomId에 해당하는 채팅 리스트 반환
+    .post(auth, chatController.createNewChat); // roomId에 해당하는 채팅 생성
 
 chatRouter
     .route('/:chatId')
-    .delete(auth, chatController.deleteChat)
-    .put(auth, chatController.updateChat);
+    .delete(auth, chatController.deleteChat) // 특정 chatId (채팅) 삭제
+    .put(auth, chatController.updateChat); // 특정 chatId (채팅) 수정
 
 module.exports = chatRouter;
