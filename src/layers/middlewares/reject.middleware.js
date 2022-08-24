@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
     const [tokenType, tokenValue] = authorization || ''.split(' ');
     try {
         jwt.verify(tokenValue, SECRET_KEY);
-        res.status(401).json({ result: false, message: '로그인 되어 있습니다.' });
+        return res.status(401).json({ result: false, message: '로그인 되어 있습니다.' });
     } catch (err) {
         next();
     }

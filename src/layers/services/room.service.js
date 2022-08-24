@@ -32,7 +32,7 @@ class RoomService {
         if (roomInfo.ownerUserId !== ownerUserId) return this.errResponse(401, '방장이 아닙니다.');
 
         const deleteRoom = await this.roomRepository.deleteRoom(roomId);
-        if (!deleteRoom) return this.errResponse(401, '알 수 없는 에러');
+        if (deleteRoom == 0) return this.errResponse(401, '알 수 없는 에러');
 
         return { status: 200, success: true, result: {} };
     };
