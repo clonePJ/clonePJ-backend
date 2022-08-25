@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const SECRET_KEY = process.env.SECRET_KEY;
 module.exports = (req, res, next) => {
+    console.log(req.headers);
+    console.log(res.headers);
     const { authorization } = req.headers;
     if (!authorization)
         return res.status(400).json({ result: false, message: '로그인하지 않았습니다.' });
